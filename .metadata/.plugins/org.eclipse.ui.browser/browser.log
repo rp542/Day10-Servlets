@@ -1,0 +1,10 @@
+
+Sep 05, 2018 05:49:34.86 NEW SESSION
+Sep 05, 2018 05:49:34.86 1536140974859	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+Sep 05, 2018 05:56:32.32 1536141392326	addons.repository	WARN	Search failed when repopulating cache
+Sep 05, 2018 05:56:33.18 1536141393186	addons.update-checker	WARN	Update manifest was not valid XML
+Sep 05, 2018 05:56:33.33 1536141393333	addons.productaddons	WARN	File download failed: 0x80004004
+Sep 05, 2018 05:56:33.33 1536141393339	addons.productaddons	WARN	File download failed: 0x80004004
+Sep 05, 2018 05:56:33.34 1536141393348	addons.update-checker	WARN	HTTP Request failed for an unknown reason
+Sep 05, 2018 05:56:33.35 1536141393354	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+Sep 05, 2018 05:56:33.35 1536141393355	addons.manager	WARN	Failed to update system addons: Error: Failed downloading XML, status: 0, reason: error (resource://gre/modules/addons/ProductAddonChecker.jsm:103:16) JS Stack trace: downloadXML/</fail@ProductAddonChecker.jsm:103:16 < Spinner.prototype.observe@AsyncShutdown.jsm:529:9
