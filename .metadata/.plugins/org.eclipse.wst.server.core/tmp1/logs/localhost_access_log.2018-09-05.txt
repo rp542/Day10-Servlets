@@ -12,3 +12,10 @@
 0:0:0:0:0:0:0:1 - - [05/Sep/2018:09:14:13 -0400] "POST /LoginApp/register HTTP/1.1" 200 81
 0:0:0:0:0:0:0:1 - - [05/Sep/2018:09:14:17 -0400] "GET /LoginApp/login.html HTTP/1.1" 200 502
 0:0:0:0:0:0:0:1 - - [05/Sep/2018:09:14:23 -0400] "POST /LoginApp/login HTTP/1.1" 200 28
+127.0.0.1 - - [05/Sep/2018:23:52:31 -0400] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [05/Sep/2018:23:52:32 -0400] "GET /DisplayCardDetails/ HTTP/1.1" 404 1097
+0:0:0:0:0:0:0:1 - - [05/Sep/2018:23:52:32 -0400] "GET /favicon.ico HTTP/1.1" 404 1085
+0:0:0:0:0:0:0:1 - - [05/Sep/2018:23:52:43 -0400] "GET /DisplayCardDetails/creditcard HTTP/1.1" 405 1116
+0:0:0:0:0:0:0:1 - - [05/Sep/2018:23:54:54 -0400] "GET /DisplayCardDetails/ HTTP/1.1" 404 1097
+0:0:0:0:0:0:0:1 - - [05/Sep/2018:23:55:47 -0400] "GET /DisplayCardDetails/details.html HTTP/1.1" 200 459
+0:0:0:0:0:0:0:1 - - [05/Sep/2018:23:56:07 -0400] "POST /DisplayCardDetails/creditcard HTTP/1.1" 200 -
