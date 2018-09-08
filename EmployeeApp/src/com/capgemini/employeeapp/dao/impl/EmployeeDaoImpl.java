@@ -64,11 +64,6 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		return null;
 	}
 
-	@Override
-	public Employee findEmployeeById(int emloyeeId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 
 }
