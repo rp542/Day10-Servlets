@@ -7,24 +7,33 @@ import com.capgemini.employeeapp.dao.EmployeeDao;
 import com.capgemini.employeeapp.model.Employee;
 
 public class EmployeeDaoImpl implements EmployeeDao {
+
 	private List<Employee> employees = new ArrayList<>();
 
 	@Override
 	public List<Employee> findAllEmployees() {
-
-		return null;
+		return employees;
 	}
 
 	@Override
-	public Employee findEmployeeById(int EmloyeeId) {
-
-		return null;
-	}
-
-	@Override
-	public boolean deleteEmployee(int employeeId) {
+	public Employee findEmployeeByID(int emoloyeeId) {
 		for (Employee employee : employees) {
-			if (employee.getEmoloyeeId() == employeeId) {
+			if (employee.getEmoloyeeId() == emoloyeeId) {
+				return employee;
+			}
+		}
+		return null;
+	}
+
+	@Override
+	public String toString() {
+		return "EmployeeDaoImpl [employees=" + employees + "]";
+	}
+
+	@Override
+	public boolean deleteEmployee(int emoloyeeId) {
+		for (Employee employee : employees) {
+			if (employee.getEmoloyeeId() == emoloyeeId) {
 				employees.remove(employee);
 				return true;
 			}
@@ -34,14 +43,32 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
 	@Override
 	public boolean addEmployee(Employee employee) {
-
+		
 		return employees.add(employee);
 	}
 
 	@Override
 	public Employee updateEmployee(Employee employee) {
-
+		
+		for(Employee e:employees)
+		{
+			if(e.getEmoloyeeId()==employee.getEmoloyeeId())
+			{
+				e.setEmployeeName(employee.getEmployeeName());
+				e.setEmployeeSalary(employee.getEmployeeSalary());
+				e.setEmployeeDepartment(employee.getEmployeeDepartment());
+				
+			}
+			return e;	
+		}
 		return null;
 	}
+
+	@Override
+	public Employee findEmployeeById(int emloyeeId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }
