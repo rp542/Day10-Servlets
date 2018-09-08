@@ -1,4 +1,3 @@
-
 package com.capgemini.employeeapp.controller;
 
 import java.io.IOException;
@@ -13,18 +12,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.capgemini.employeeapp.dao.EmployeeDao;
-import com.capgemini.employeeapp.dao.impl.EmployeeDaoImpl;
-import com.capgemini.employeeapp.model.Employee;
 
-@WebServlet("/addEmployee")
-public class AddEmployeeController extends HttpServlet {
+@WebServlet("/deleteemployee")
+public class DeleteEmployeeDetailsController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private EmployeeDao employeeDao;
 	private ServletContext context;
 
-	public AddEmployeeController() {
+	public DeleteEmployeeDetailsController() {
 		super();
-		employeeDao = new EmployeeDaoImpl();
+
 	}
 
 	@Override
@@ -32,26 +29,19 @@ public class AddEmployeeController extends HttpServlet {
 		context = config.getServletContext();
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
 		response.setContentType("text/html");
 
 		int empId = Integer.parseInt(request.getParameter("empId"));
-		String empName = request.getParameter("empName");
-		double empSalary = Double.parseDouble(request.getParameter("empSalary"));
-		String empDept = request.getParameter("empDept");
-
-		context.setAttribute("employeeDao", employeeDao);
-
-		Employee employee = new Employee(empId, empName, empSalary, empDept);
 		RequestDispatcher dispatcher = null;
-		if (employeeDao.addEmployee(employee)) {
+		employeeDao = (EmployeeDao) context.getAttribute("employeeDao");
+
+		if (employeeDao.deleteEmployee(empId)) {
 
 			response.sendRedirect("getAllEmployees");
-		}
-		else 
-		{
+
+		} else {
 			dispatcher = request.getRequestDispatcher("error.jsp");
 			dispatcher.forward(request, response);
 
